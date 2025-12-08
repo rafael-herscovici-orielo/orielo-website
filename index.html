@@ -34,14 +34,16 @@ function scaleTagline() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    scaleTagline();
-
+    const heading = document.getElementById('orio');
     const tagline = document.getElementById('tagline');
-    const orio = document.getElementById('orio');
 
-    orio.addEventListener('animationend', () => {
+    // scale tagline width to match logo
+    const scale = heading.offsetWidth / tagline.offsetWidth;
+    tagline.style.transform = `scaleX(${scale})`;
+
+    // fade in tagline after logo animation
+    heading.addEventListener('animationend', () => {
         tagline.style.opacity = 1;
-        tagline.style.transform = 'translateY(0)';
     });
 });
 
