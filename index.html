@@ -10,3 +10,34 @@
     <a href="/cookie-policy.html">🍪 Cookie Policy</a>
     <a href="/data-processing-agreement.html">📘 Data Processing Agreement</a>
 </footer>
+
+<script>
+function scaleTagline() {
+    const heading = document.getElementById('orio');
+    const tagline = document.getElementById('tagline');
+
+    const headingWidth = heading.offsetWidth;
+    const taglineWidth = tagline.offsetWidth;
+
+    const currentFontSize = parseFloat(getComputedStyle(tagline).fontSize);
+    const newFontSize = currentFontSize * (headingWidth / taglineWidth);
+
+    tagline.style.fontSize = newFontSize + 'px';
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    scaleTagline();
+
+    const tagline = document.getElementById('tagline');
+    const orio = document.getElementById('orio');
+
+    // Wait for ORIELO fade-in to finish
+    orio.addEventListener('animationend', () => {
+        tagline.style.opacity = 1;
+        tagline.style.transform = 'translateY(0)';
+    });
+});
+
+window.addEventListener('resize', scaleTagline);
+</script>
+</body>
