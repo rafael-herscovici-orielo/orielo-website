@@ -38,8 +38,8 @@
         display: inline-block;
         white-space: nowrap;
         /* scale to match width of heading */
-        transform-origin: left center;
-        transform: scaleX(calc(1.0 * var(--scale, 1)));
+        transform-origin: center center; /* center scaling */
+        transform: scaleX(var(--scale, 1));
     }
 </style>
 </head>
@@ -50,12 +50,17 @@
 </div>
 
 <script>
-    const heading = document.getElementById('orio');
-    const tagline = document.getElementById('tagline');
-    const headingWidth = heading.offsetWidth;
-    const taglineWidth = tagline.offsetWidth;
-    const scale = headingWidth / taglineWidth;
-    tagline.style.setProperty('--scale', scale);
+    function scaleTagline() {
+        const heading = document.getElementById('orio');
+        const tagline = document.getElementById('tagline');
+        const headingWidth = heading.offsetWidth;
+        const taglineWidth = tagline.offsetWidth;
+        const scale = headingWidth / taglineWidth;
+        tagline.style.setProperty('--scale', scale);
+    }
+
+    scaleTagline();
+    window.addEventListener('resize', scaleTagline); // recalc on resize
 </script>
 </body>
 </html>
