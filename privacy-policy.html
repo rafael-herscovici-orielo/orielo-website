@@ -6,39 +6,6 @@
 <title>ORIELO – Privacy Policy</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>
-/* Page-specific animations for logo and content */
-.logo-container {
-    opacity: 0;
-    animation: logoFadeUp 1.6s ease-out forwards;
-    margin-bottom: 3rem;
-}
-
-.logo {
-    font-size: 4rem;
-    font-weight: 700;
-    text-align: center;
-    color: black;
-    letter-spacing: 0.1rem;
-    animation: logoShadow 1.6s ease-out forwards;
-}
-
-@keyframes logoFadeUp {
-    0% { opacity: 0; transform: translateY(40px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes logoShadow {
-    0% { text-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15); }
-    100% { text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08); }
-}
-
-main.content {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-</style>
 </head>
 <body>
 
@@ -48,7 +15,6 @@ main.content {
 </div>
 
 <main class="content" id="content">
-
     <h1>Privacy Policy</h1>
     <p>Last updated: 2025</p>
 
@@ -115,7 +81,6 @@ main.content {
             United Kingdom
         </address>
     </section>
-
 </main>
 
 <footer>
@@ -128,14 +93,13 @@ main.content {
 </footer>
 
 <script>
-    // Show content after logo animation
-    const logoContainer = document.querySelector('.logo-container');
-    const content = document.getElementById('content');
+const logoContainer = document.querySelector('.logo-container');
+const content = document.getElementById('content');
 
-    logoContainer.addEventListener('animationend', () => {
-        content.style.opacity = 1;
-        content.style.transform = "translateY(0)";
-    });
+logoContainer.addEventListener('animationend', () => {
+    content.style.opacity = 1;
+    content.style.transform = "translateY(0)";
+});
 </script>
 
 </body>
