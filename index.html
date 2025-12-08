@@ -17,7 +17,6 @@
 
     .container {
         text-align: center;
-        display: inline-block;
     }
 
     h1 {
@@ -26,7 +25,6 @@
         color: black;
         font-size: 5rem;
         margin: 0;
-        display: inline-block;
     }
 
     p {
@@ -35,11 +33,8 @@
         color: black;
         font-size: 1.5rem;
         margin: 0.3rem 0 0 0;
-        display: inline-block;
+        display: block;
         white-space: nowrap;
-        /* scale to match width of heading */
-        transform-origin: center center; /* center scaling */
-        transform: scaleX(var(--scale, 1));
     }
 </style>
 </head>
@@ -53,14 +48,21 @@
     function scaleTagline() {
         const heading = document.getElementById('orio');
         const tagline = document.getElementById('tagline');
+
         const headingWidth = heading.offsetWidth;
         const taglineWidth = tagline.offsetWidth;
-        const scale = headingWidth / taglineWidth;
-        tagline.style.setProperty('--scale', scale);
+
+        // Get current font size in pixels
+        const currentFontSize = parseFloat(getComputedStyle(tagline).fontSize);
+
+        // Scale font size proportionally
+        const newFontSize = currentFontSize * (headingWidth / taglineWidth);
+
+        tagline.style.fontSize = newFontSize + 'px';
     }
 
-    scaleTagline();
-    window.addEventListener('resize', scaleTagline); // recalc on resize
+    window.addEventListener('DOMContentLoaded', scaleTagline);
+    window.addEventListener('resize', scaleTagline);
 </script>
 </body>
 </html>
