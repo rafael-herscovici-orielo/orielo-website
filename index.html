@@ -18,6 +18,7 @@
 
         .container {
             text-align: center;
+            display: inline-block;
         }
 
         h1 {
@@ -33,14 +34,15 @@
             font-weight: 400; /* Normal font */
             color: black;
             font-size: 1.5rem;
-            margin: 0.5rem auto 0 auto; /* Closer spacing */
-            max-width: fit-content; /* Make width match content of h1 */
+            margin: 0.5rem auto 0 auto;
+            display: inline-block;
+            width: 100%; /* Make the p element span the full width of h1 */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>ORIELO</h1>
+        <h1 id="orio">ORIELO</h1>
         <p>The future begins here</p>
     </div>
 </body>
