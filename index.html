@@ -6,9 +6,31 @@
 <title>ORIELO</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* Page-specific animation */
+h1#orio {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+p#tagline {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Center container for logo + tagline */
+.main-container {
+    flex: 1; /* fill space above footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;
+}
+</style>
 </head>
 <body>
-<div class="container">
+<div class="main-container">
     <h1 id="orio">ORIELO</h1>
     <p id="tagline">The future begins here</p>
 </div>
@@ -21,33 +43,32 @@
 </footer>
 
 <script>
-    function scaleTagline() {
-        const heading = document.getElementById('orio');
-        const tagline = document.getElementById('tagline');
+function scaleTagline() {
+    const heading = document.getElementById('orio');
+    const tagline = document.getElementById('tagline');
 
-        const headingWidth = heading.offsetWidth;
-        const taglineWidth = tagline.offsetWidth;
+    const headingWidth = heading.offsetWidth;
+    const taglineWidth = tagline.offsetWidth;
 
-        const currentFontSize = parseFloat(getComputedStyle(tagline).fontSize);
-        const newFontSize = currentFontSize * (headingWidth / taglineWidth);
+    const currentFontSize = parseFloat(getComputedStyle(tagline).fontSize);
+    const newFontSize = currentFontSize * (headingWidth / taglineWidth);
 
-        tagline.style.fontSize = newFontSize + 'px';
-    }
+    tagline.style.fontSize = newFontSize + 'px';
+}
 
-    window.addEventListener('DOMContentLoaded', () => {
-        scaleTagline();
+window.addEventListener('DOMContentLoaded', () => {
+    scaleTagline();
 
-        const tagline = document.getElementById('tagline');
-        const orio = document.getElementById('orio');
+    const tagline = document.getElementById('tagline');
+    const orio = document.getElementById('orio');
 
-        // Wait for ORIELO fade-in to finish
-        orio.addEventListener('animationend', () => {
-            tagline.style.opacity = 1;
-            tagline.style.transform = 'translateY(0)';
-        });
+    orio.addEventListener('animationend', () => {
+        tagline.style.opacity = 1;
+        tagline.style.transform = 'translateY(0)';
     });
+});
 
-    window.addEventListener('resize', scaleTagline);
+window.addEventListener('resize', scaleTagline);
 </script>
 </body>
 </html>
