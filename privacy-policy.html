@@ -5,100 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ORIELO – Privacy Policy</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="styles.css">
 <style>
-    body {
-        margin: 0;
-        font-family: 'Montserrat', sans-serif;
-        background: #ffffff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 40px 20px;
-    }
+/* Only page-specific animations for logo and content */
+.logo-container {
+    opacity: 0;
+    animation: logoFadeUp 1.6s ease-out forwards;
+    margin-bottom: 3rem;
+}
 
-    /* Logo */
-    .logo-container {
-        opacity: 0;
-        animation: logoFadeUp 1.6s ease-out forwards;
-        margin-bottom: 3rem;
-    }
+.logo {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    letter-spacing: 0.1rem;
+    animation: logoShadow 1.6s ease-out forwards;
+}
 
-    .logo {
-        font-size: 4rem;
-        font-weight: 700;
-        text-align: center;
-        color: black;
-        letter-spacing: 0.1rem;
-        animation: logoShadow 1.6s ease-out forwards;
-    }
+@keyframes logoFadeUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 
-    @keyframes logoFadeUp {
-        0% {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+@keyframes logoShadow {
+    0% { text-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15); }
+    100% { text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08); }
+}
 
-    @keyframes logoShadow {
-        0% {
-            text-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
-        }
-        100% {
-            text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08);
-        }
-    }
-
-    /* Main content */
-    main.content {
-        max-width: 900px;
-        width: 100%;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    h1 {
-        font-size: 2.8rem;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-
-    h2 {
-        margin-top: 2rem;
-    }
-
-    p, li {
-        margin-bottom: 1rem;
-    }
-
-    ul {
-        padding-left: 1.5rem;
-    }
-
-    a {
-        color: #007BFF;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    footer {
-        margin-top: 2rem;
-        text-align: center;
-    }
-
-    footer a {
-        display: inline-block;
-        margin: 0 1rem;
-        font-weight: 500;
-    }
+main.content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
 </style>
 </head>
 <body>
@@ -108,9 +47,7 @@
     <div class="logo">ORIELO</div>
 </div>
 
-<!-- Privacy Policy -->
 <main class="content" id="content">
-
     <h1>Privacy Policy</h1>
     <p>Last updated: 2025</p>
 
@@ -177,12 +114,11 @@
             United Kingdom
         </address>
     </section>
-
 </main>
 
-<!-- Footer Links -->
 <footer>
     <nav>
+        <a href="privacy-policy.html">Privacy Policy</a>
         <a href="/terms.html">Terms & Conditions</a>
         <a href="/cookie-policy.html">🍪 Cookie Policy</a>
         <a href="/data-processing-agreement.html">📘 Data Processing Agreement</a>
@@ -190,7 +126,7 @@
 </footer>
 
 <script>
-    // Reveal content after logo animation
+    // Show content after logo animation
     const logoContainer = document.querySelector('.logo-container');
     const content = document.getElementById('content');
 
