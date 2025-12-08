@@ -1,4 +1,4 @@
-/* General body styles */
+/* ----------------- General ----------------- */
 body {
     margin: 0;
     min-height: 100vh;
@@ -9,7 +9,6 @@ body {
     color: #000;
 }
 
-/* Footer */
 footer {
     padding: 20px 0;
     text-align: center;
@@ -26,24 +25,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ----------------- Index Page Specific ----------------- */
-
-/* Logo */
-body.index-page h1#orio {
-    font-size: 5rem; /* large for main page */
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
-}
-
-/* Tagline */
-body.index-page p#tagline {
-    font-size: 1.5rem; /* larger tagline */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: transform 0.8s ease, opacity 0.8s ease;
-}
-
-/* Container remains centered */
+/* ----------------- Index Page ----------------- */
 body.index-page .main-container {
     flex: 1;
     display: flex;
@@ -52,9 +34,21 @@ body.index-page .main-container {
     align-items: center;
     text-align: center;
 }
-/* ----------------- Privacy Policy Page ----------------- */
 
-/* Container for privacy policy content */
+body.index-page h1#orio {
+    font-size: 5rem; /* large logo */
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+body.index-page p#tagline {
+    font-size: 1.5rem; /* larger tagline */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* ----------------- Privacy Policy Page ----------------- */
 main.content {
     max-width: 800px;
     margin: 0 auto;
@@ -62,12 +56,11 @@ main.content {
     text-align: left;
     font-size: 1rem;
     line-height: 1.6;
-    opacity: 0;           /* will be revealed after logo animation */
+    opacity: 0; /* revealed after logo animation */
     transform: translateY(20px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Headings */
 main.content h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -79,7 +72,6 @@ main.content h2 {
     margin-bottom: 0.8rem;
 }
 
-/* Paragraphs and list items */
 main.content p,
 main.content li {
     font-size: 1rem;
@@ -91,12 +83,10 @@ main.content ul {
 }
 
 /* ----------------- Animations ----------------- */
-
 @keyframes fadeIn {
     to { opacity: 1; }
 }
 
-/* Privacy Policy logo animations */
 .logo-container {
     opacity: 0;
     animation: logoFadeUp 1.6s ease-out forwards;
