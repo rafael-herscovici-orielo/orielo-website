@@ -29,10 +29,8 @@ function scaleTagline() {
     const headingWidth = heading.offsetWidth;
     const taglineWidth = tagline.offsetWidth;
 
-    const currentFontSize = parseFloat(getComputedStyle(tagline).fontSize);
-    const newFontSize = currentFontSize * (headingWidth / taglineWidth);
-
-    tagline.style.fontSize = newFontSize + 'px';
+    const scale = headingWidth / taglineWidth;
+    tagline.style.transform = `translateY(0) scaleX(${scale})`;
 }
 
 window.addEventListener('DOMContentLoaded', () => {
