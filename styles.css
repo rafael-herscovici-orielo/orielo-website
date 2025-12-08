@@ -42,7 +42,9 @@ body.index-page h1#orio {
 }
 
 body.index-page p#tagline {
-    font-size: 1.5rem; /* larger tagline */
+    font-size: 1.5rem;
+    margin: 0; /* remove default margins */
+    margin-top: 0.5rem; /* small gap under logo */
     opacity: 0;
     transform: translateY(20px);
     transition: transform 0.8s ease, opacity 0.8s ease;
