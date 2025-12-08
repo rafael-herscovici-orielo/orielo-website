@@ -5,53 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ORIELO</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<style>
-    body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-    }
-
-    .container {
-        text-align: center;
-    }
-
-    h1 {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        color: black;
-        font-size: 5rem;
-        margin: 0;
-        opacity: 0;
-        animation: fadeIn 1.5s forwards;
-    }
-
-    p {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 400;
-        color: black;
-        font-size: 1.5rem;
-        margin: 0.3rem 0 0 0;
-        display: block;
-        white-space: nowrap;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: transform 0.8s ease, opacity 0.8s ease;
-    }
-
-    @keyframes fadeIn {
-        to { opacity: 1; }
-    }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
     <h1 id="orio">ORIELO</h1>
     <p id="tagline">The future begins here</p>
 </div>
+
+<footer>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms & Conditions</a>
+    <a href="/cookie-policy.html">🍪 Cookie Policy</a>
+    <a href="/data-processing-agreement.html">📘 Data Processing Agreement</a>
+</footer>
 
 <script>
     function scaleTagline() {
