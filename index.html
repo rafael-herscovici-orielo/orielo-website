@@ -1,49 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ORIELO</title>
-    <!-- Google Fonts: Montserrat Normal & Bold -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: white;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORIELO</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
 
-        .container {
-            text-align: center;
-            display: inline-block;
-        }
+    .container {
+        text-align: center;
+        display: inline-block;
+    }
 
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700; /* Bold font */
-            color: black;
-            font-size: 5rem;
-            margin: 0;
-        }
+    h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        color: black;
+        font-size: 5rem;
+        margin: 0;
+        display: inline-block;
+    }
 
-        p {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400; /* Normal font */
-            color: black;
-            font-size: 1.5rem;
-            margin: 0.5rem auto 0 auto;
-            display: inline-block;
-            width: 100%; /* Make the p element span the full width of h1 */
-        }
-    </style>
+    p {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        color: black;
+        font-size: 1.5rem;
+        margin: 0.3rem 0 0 0;
+        display: inline-block;
+        white-space: nowrap;
+        /* scale to match width of heading */
+        transform-origin: left center;
+        transform: scaleX(calc(1.0 * var(--scale, 1)));
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1 id="orio">ORIELO</h1>
-        <p>The future begins here</p>
-    </div>
+<div class="container">
+    <h1 id="orio">ORIELO</h1>
+    <p id="tagline">The future begins here</p>
+</div>
+
+<script>
+    const heading = document.getElementById('orio');
+    const tagline = document.getElementById('tagline');
+    const headingWidth = heading.offsetWidth;
+    const taglineWidth = tagline.offsetWidth;
+    const scale = headingWidth / taglineWidth;
+    tagline.style.setProperty('--scale', scale);
+</script>
 </body>
 </html>
