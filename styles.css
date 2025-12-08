@@ -42,13 +42,15 @@ body.index-page h1#orio {
 }
 
 body.index-page p#tagline {
-    font-size: 1.5rem;
-    margin: 0; /* remove default margins */
-    margin-top: 0.5rem; /* small gap under logo */
+    display: inline-block;  /* keeps it directly under the logo */
+    margin: 0;
+    margin-top: 0.3rem;     /* small gap under logo */
     opacity: 0;
-    transform: translateY(20px);
+    transform: scaleX(1);   /* horizontal scaling only */
     transition: transform 0.8s ease, opacity 0.8s ease;
+    white-space: nowrap;    /* prevent wrapping */
 }
+
 
 /* ----------------- Privacy Policy Page ----------------- */
 main.content {
