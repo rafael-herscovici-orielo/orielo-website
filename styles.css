@@ -1,6 +1,4 @@
-/* styles.css */
-
-/* Body and layout */
+/* General body styles */
 body {
     margin: 0;
     min-height: 100vh;
@@ -8,43 +6,7 @@ body {
     flex-direction: column;
     background-color: white;
     font-family: 'Montserrat', sans-serif;
-}
-
-/* Main container for vertically centered content */
-.main-container {
-    flex: 1; /* fills space above footer */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* vertical center */
-    align-items: center;
-    text-align: center;
-}
-
-/* Headings and paragraphs */
-h1, h2 {
-    font-weight: 700;
-    color: black;
-    margin: 0.8rem 0;
-}
-
-h1 {
-    font-size: 5rem;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-top: 2rem;
-}
-
-p, li {
-    font-weight: 400;
-    color: black;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-ul {
-    padding-left: 1.5rem;
+    color: #000;
 }
 
 /* Footer */
@@ -64,12 +26,19 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    to { opacity: 1; }
+/* ----------------- Index Page ----------------- */
+
+/* Container for index logo + tagline */
+.main-container {
+    flex: 1; /* fill space above footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;
+    text-align: center;
 }
 
-/* Logo fade-in for index page */
+/* Logo fade-in */
 h1#orio {
     opacity: 0;
     animation: fadeIn 1.5s forwards;
@@ -82,7 +51,51 @@ p#tagline {
     transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
-/* Privacy policy logo animation */
+/* ----------------- Privacy Policy Page ----------------- */
+
+/* Container for privacy policy content */
+main.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0;           /* will be revealed after logo animation */
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Headings */
+main.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+main.content h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Paragraphs and list items */
+main.content p,
+main.content li {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+main.content ul {
+    padding-left: 1.5rem;
+}
+
+/* ----------------- Animations ----------------- */
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Privacy Policy logo animations */
 .logo-container {
     opacity: 0;
     animation: logoFadeUp 1.6s ease-out forwards;
@@ -106,11 +119,4 @@ p#tagline {
 @keyframes logoShadow {
     0% { text-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15); }
     100% { text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08); }
-}
-
-/* Main content reveal after logo animation (privacy policy) */
-main.content {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
 }
