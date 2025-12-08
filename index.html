@@ -1,4 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORIELO</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
 <body class="index-page">
+
 <div class="main-container">
     <h1 id="orio">ORIELO</h1>
     <p id="tagline">The future begins here</p>
@@ -31,7 +41,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const tagline = document.getElementById('tagline');
     const orio = document.getElementById('orio');
 
-    // Wait for ORIELO fade-in to finish
     orio.addEventListener('animationend', () => {
         tagline.style.opacity = 1;
         tagline.style.transform = 'translateY(0)';
@@ -40,4 +49,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('resize', scaleTagline);
 </script>
+
 </body>
+</html>
