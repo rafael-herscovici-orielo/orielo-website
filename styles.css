@@ -117,6 +117,61 @@ body {
     color: #007BFF;
 }
 
+/* Hamburger button (desktop hidden) */
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger-box {
+    width: 24px;
+    height: 18px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.hamburger-inner {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger-inner::before {
+    content: "";
+    top: -8px;
+}
+
+.hamburger-inner::after {
+    content: "";
+    top: 8px;
+}
+
+.hamburger[aria-expanded="true"] .hamburger-inner {
+    transform: rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"] .hamburger-inner::before {
+    transform: rotate(90deg) translateX(0);
+    top: 0;
+}
+
+.hamburger[aria-expanded="true"] .hamburger-inner::after {
+    opacity: 0;
+}
+
 /* ----------------- Hero Section ----------------- */
 .hero {
     min-height: 80vh;
@@ -371,18 +426,53 @@ main.content ul {
 
 /* ----------------- Responsive ----------------- */
 @media (max-width: 768px) {
-    .nav-menu {
-        gap: 1rem;
+    .nav-container {
+        padding: 0.75rem 1rem;
     }
-    
+
+    .hamburger {
+        display: inline-block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: white;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 1rem 1rem;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .nav-menu[aria-hidden="false"],
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-menu li {
+        min-width: 0;
+    }
+
+    .nav-menu a {
+        font-size: 0.95rem;
+        white-space: nowrap;
+        padding: 0.75rem 0;
+        display: block;
+    }
+
     .hero-content h1 {
         font-size: 3rem;
     }
-    
+
     .contact-content {
         text-align: center;
     }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
     }
