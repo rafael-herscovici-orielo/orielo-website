@@ -1,56 +1,273 @@
 /* ----------------- General ----------------- */
-body {
+* {
     margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    font-family: 'Montserrat', sans-serif;
-    color: #000;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-footer {
-    padding: 20px 0;
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ----------------- Navigation ----------------- */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #007BFF;
+}
+
+/* ----------------- Hero Section ----------------- */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content .tagline {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 1.2s ease;
+}
+
+.hero-content .subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1.4s ease;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+    animation: fadeInUp 1.6s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* ----------------- Services Section ----------------- */
+.services {
+    padding: 5rem 0;
+    background: white;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #007BFF;
+}
+
+/* ----------------- Tech Stack Section ----------------- */
+.tech-stack {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.tech-stack h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.tech-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.tech-category {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+}
+
+.tech-category h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #007BFF;
+}
+
+/* ----------------- About Section ----------------- */
+.about {
+    padding: 5rem 0;
+    background: white;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
     text-align: center;
 }
 
-footer a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: 500;
+/* ----------------- Contact Section ----------------- */
+.contact {
+    padding: 5rem 0;
+    background: #f8f9fa;
 }
 
-footer a:hover {
+.contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info h3 {
+    margin-bottom: 1.5rem;
+    color: #007BFF;
+    font-size: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+
+/* ----------------- Footer ----------------- */
+footer {
+    background: #333;
+    color: white;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.footer-content nav {
+    margin-top: 1rem;
+}
+
+.footer-content a {
+    color: #007BFF;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.footer-content a:hover {
     text-decoration: underline;
 }
 
-/* ----------------- Index Page ----------------- */
-body.index-page .main-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* ----------------- Animations ----------------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-
-body.index-page h1#orio {
-    font-size: 5rem; /* large logo */
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
-}
-
-body.index-page p#tagline {
-    display: inline-block;  /* keeps it directly under the logo */
-    margin: 0;
-    margin-top: 0.3rem;     /* small gap under logo */
-    opacity: 0;
-    transform: scaleX(1);   /* horizontal scaling only */
-    transition: transform 0.8s ease, opacity 0.8s ease;
-    white-space: nowrap;    /* prevent wrapping */
-}
-
 
 /* ----------------- Privacy Policy Page ----------------- */
 main.content {
@@ -60,9 +277,6 @@ main.content {
     text-align: left;
     font-size: 1rem;
     line-height: 1.6;
-    opacity: 0; /* revealed after logo animation */
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 main.content h1 {
@@ -86,32 +300,32 @@ main.content ul {
     padding-left: 1.5rem;
 }
 
-/* ----------------- Animations ----------------- */
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
 .logo-container {
-    opacity: 0;
-    animation: logoFadeUp 1.6s ease-out forwards;
-    margin-bottom: 3rem;
+    text-align: center;
+    padding: 3rem 0 2rem;
 }
 
 .logo {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
-    text-align: center;
     color: black;
-    letter-spacing: 0.1rem;
-    animation: logoShadow 1.6s ease-out forwards;
 }
 
-@keyframes logoFadeUp {
-    0% { opacity: 0; transform: translateY(40px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes logoShadow {
-    0% { text-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15); }
-    100% { text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08); }
+/* ----------------- Responsive ----------------- */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .contact-content {
+        text-align: center;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }

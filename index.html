@@ -3,52 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ORIELO</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<title>ORIELO - Software Engineering Consultancy</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="index-page">
+<body>
 
-<div class="main-container">
-    <h1 id="orio">ORIELO</h1>
-    <p id="tagline">The future begins here</p>
-</div>
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo-link">ORIELO</a>
+        <ul class="nav-menu">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>ORIELO</h1>
+        <p class="tagline">The future begins here</p>
+        <p class="subtitle">20+ years architecting enterprise-grade .NET solutions</p>
+        <a href="#contact" class="cta-button">Get Started</a>
+    </div>
+</section>
+
+<section id="services" class="services">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Microservices Architecture</h3>
+                <p>Event-driven systems with CQRS, DDD, and Clean Architecture principles for scalable enterprise solutions.</p>
+            </div>
+            <div class="service-card">
+                <h3>.NET Core APIs</h3>
+                <p>High-performance REST APIs with comprehensive testing, Swagger documentation, and best practices.</p>
+            </div>
+            <div class="service-card">
+                <h3>AWS & Azure Solutions</h3>
+                <p>Serverless architectures using Lambda, SNS/SQS, API Gateway, Azure Functions, and cloud-native services.</p>
+            </div>
+            <div class="service-card">
+                <h3>Database Architecture</h3>
+                <p>SQL Server, PostgreSQL, MySQL optimization with Entity Framework Core and polyglot persistence strategies.</p>
+            </div>
+            <div class="service-card">
+                <h3>Legacy Modernization</h3>
+                <p>Transform monoliths to microservices, migrate to .NET 8+, and refactor for maintainability.</p>
+            </div>
+            <div class="service-card">
+                <h3>Technical Mentoring</h3>
+                <p>Code reviews, architecture guidance, and team mentoring on SOLID, DRY, KISS, and clean code principles.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tech-stack">
+    <div class="container">
+        <h2>Technologies We Work With</h2>
+        <div class="tech-categories">
+            <div class="tech-category">
+                <h4>.NET Ecosystem</h4>
+                <p>C#, .NET 8, ASP.NET Core, Entity Framework Core, MinimalAPI</p>
+            </div>
+            <div class="tech-category">
+                <h4>Architecture</h4>
+                <p>Microservices, CQRS, DDD, Clean Architecture, Event-Driven</p>
+            </div>
+            <div class="tech-category">
+                <h4>Cloud Platforms</h4>
+                <p>AWS (Lambda, SNS/SQS, RDS, DynamoDB), Azure (Functions, Storage)</p>
+            </div>
+            <div class="tech-category">
+                <h4>Databases</h4>
+                <p>SQL Server, PostgreSQL, MySQL, Aurora Serverless, DynamoDB</p>
+            </div>
+            <div class="tech-category">
+                <h4>Testing & Quality</h4>
+                <p>XUnit, FluentAssertions, Unit/Integration/E2E Testing</p>
+            </div>
+            <div class="tech-category">
+                <h4>DevOps</h4>
+                <p>GitLab CI/CD, GitHub Actions, CloudFormation, Docker</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <h2>About ORIELO</h2>
+        <p>With over 20 years of experience architecting enterprise-grade systems, ORIELO specializes in building elegant, high-performance .NET solutions that combine technical excellence with real-world business impact.</p>
+        <p>We are passionate advocates of clean code and best practices—applying SOLID, KISS, YAGNI, and DRY principles to design systems that are robust, scalable, and maintainable. Our expertise spans microservices architecture, event-driven systems, CQRS, Domain-Driven Design, and serverless solutions on AWS and Azure.</p>
+        <p>From designing 20+ microservices for gaming platforms to optimizing merchant onboarding systems at scale, we deliver solutions that are not only functional but sustainable and extensible. We take pride in thorough testing, continuous refactoring, and mentoring teams to elevate code quality across organizations.</p>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><strong>Email:</strong> <a href="mailto:support@orielo.co.uk">support@orielo.co.uk</a></p>
+                <p><strong>Office:</strong><br>
+                48 Olympia Way<br>
+                Whitstable, CT5 3FF<br>
+                United Kingdom</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <footer>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="/terms.html">Terms & Conditions</a>
-    <a href="/cookie-policy.html">🍪 Cookie Policy</a>
-    <a href="/data-processing-agreement.html">📘 Data Processing Agreement</a>
+    <div class="footer-content">
+        <p>&copy; 2025 ORIELO. All rights reserved.</p>
+        <nav>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="data-processing-agreement.html">Data Processing Agreement</a>
+        </nav>
+    </div>
 </footer>
 
-<script>
-function scaleTagline() {
-    const heading = document.getElementById('orio');
-    const tagline = document.getElementById('tagline');
-
-    const headingWidth = heading.offsetWidth;
-    const taglineWidth = tagline.offsetWidth;
-
-    const scale = headingWidth / taglineWidth;
-    tagline.style.transform = `translateY(0) scaleX(${scale})`;
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    const heading = document.getElementById('orio');
-    const tagline = document.getElementById('tagline');
-
-    // scale tagline width to match logo
-    const scale = heading.offsetWidth / tagline.offsetWidth;
-    tagline.style.transform = `scaleX(${scale})`;
-
-    // fade in tagline after logo animation
-    heading.addEventListener('animationend', () => {
-        tagline.style.opacity = 1;
-    });
-});
-
-window.addEventListener('resize', scaleTagline);
-</script>
 
 </body>
 </html>
